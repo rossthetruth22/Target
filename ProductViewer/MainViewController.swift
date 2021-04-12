@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
+    var products = [Product]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,8 +26,22 @@ class MainViewController: UITableViewController {
         let task = URLSession.shared.dataTask(with: URL(string: "https://api.target.com/mobile_case_study_deals/v1/deals")!) { (data, response, error) in
             guard let data = data else {return}
             
-            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-            print(json)
+            //let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            //print(json)
+            
+            do {
+                let products = try JSONDecoder().decode(Products.self, from: data)
+                self.products = products.products
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                //print(products.products.count)
+            }catch{
+                print("unsucc")
+            }
+            //let products = try? JSONDecoder().decode(Products.self, from: data)
+            
+            //print(products)
 
         }
         
@@ -38,23 +54,38 @@ class MainViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return products.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as? ListCell
+        cell?.title.text = products[indexPath.row].title
+        cell?.price.text = products[indexPath.row].regular_price.display_string
+        DispatchQueue.global().async {
+            guard let data = try? Data.init(contentsOf: self.products[indexPath.row].image_url) else {return}
+            DispatchQueue.main.async {
+                cell?.picture.image = UIImage(data: data)
+            }
+        }
+        
 
         // Configure the cell...
 
         return cell!
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 170.0
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,14 +122,24 @@ class MainViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+    
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else {return}
+        if let controlla = segue.destination as? DetailViewController{
+
+            controlla.product = products[(selectedIndexPath.row)]
+            let cell = tableView.cellForRow(at: selectedIndexPath) as! ListCell
+            controlla.holdImage = cell.picture.image
+            //controlla.holdText = cell.
+            //controlla.price = cell.price
+        }
     }
-    */
+    
 
 }

@@ -8,8 +8,15 @@
 
 import UIKit
 
+
 class ListCell: UITableViewCell {
 
+    @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var circleView: CircleView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +27,11 @@ class ListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        picture.image = nil
+    }
+    
 
 }

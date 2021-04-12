@@ -2,7 +2,7 @@
 //  DetailViewController.swift
 //  ProductViewer
 //
-//  Created by Royce Reynolds on 4/6/21.
+//  Created by Royce Reynolds on 4/8/21.
 //  Copyright © 2021 Target. All rights reserved.
 //
 
@@ -10,8 +10,23 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var price: UILabel!
+    
+    var product: Product!
+    var holdImage: UIImage?
+    var holdText: String?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(textView.isHidden)
+        textView.text = "Royce Reynolds"
+        //textView.text = "Royce Reynolds"
+        price.text = product.regular_price.display_string
+        picture.image = holdImage
+        
 
         // Do any additional setup after loading the view.
     }
