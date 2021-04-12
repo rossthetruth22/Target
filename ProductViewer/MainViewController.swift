@@ -21,7 +21,7 @@ class MainViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        let request = URLRequest(url: URL(string: "https://api.target.com/mobile_case_study_deals/v1/deals")!)
+//        let request = URLRequest(url: URL(string: "https://api.target.com/mobile_case_study_deals/v1/deals")!)
         
         let task = URLSession.shared.dataTask(with: URL(string: "https://api.target.com/mobile_case_study_deals/v1/deals")!) { (data, response, error) in
             guard let data = data else {return}

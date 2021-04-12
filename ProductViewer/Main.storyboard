@@ -44,16 +44,16 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tYK-ZP-KDk">
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tYK-ZP-KDk">
                                             <rect key="frame" x="296" y="115" width="108" height="50"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ship" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsy-po-hpm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ship" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsy-po-hpm">
                                                     <rect key="frame" x="0.0" y="0.0" width="32" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WX-L3-LTd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WX-L3-LTd">
                                                     <rect key="frame" x="37" y="0.0" width="16" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -88,7 +88,7 @@
                                         <constraint firstItem="mtn-fa-AgZ" firstAttribute="top" secondItem="G2f-Ne-crN" secondAttribute="top" id="EK3-1K-NHf"/>
                                         <constraint firstItem="tYK-ZP-KDk" firstAttribute="height" secondItem="Cw8-We-7zU" secondAttribute="height" multiplier="0.943396" id="JPg-11-G6q"/>
                                         <constraint firstItem="Cw8-We-7zU" firstAttribute="bottom" secondItem="G2f-Ne-crN" secondAttribute="bottom" id="Ng6-NL-lTv"/>
-                                        <constraint firstItem="tYK-ZP-KDk" firstAttribute="leading" secondItem="Cw8-We-7zU" secondAttribute="trailing" constant="74.5" id="a7q-FV-RvG"/>
+                                        <constraint firstItem="tYK-ZP-KDk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cw8-We-7zU" secondAttribute="trailing" constant="10" id="a7q-FV-RvG"/>
                                         <constraint firstItem="Cw8-We-7zU" firstAttribute="width" secondItem="G2f-Ne-crN" secondAttribute="width" multiplier="0.75" id="f9s-Np-9wV"/>
                                         <constraint firstItem="tYK-ZP-KDk" firstAttribute="bottom" secondItem="Cw8-We-7zU" secondAttribute="bottom" id="ggV-8L-QTa"/>
                                         <constraint firstItem="mtn-fa-AgZ" firstAttribute="height" secondItem="G2f-Ne-crN" secondAttribute="height" multiplier="0.5" id="jYs-FU-qw5"/>
