@@ -21,13 +21,8 @@ class MainViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-//        let request = URLRequest(url: URL(string: "https://api.target.com/mobile_case_study_deals/v1/deals")!)
-        
         let task = URLSession.shared.dataTask(with: URL(string: "https://api.target.com/mobile_case_study_deals/v1/deals")!) { (data, response, error) in
             guard let data = data else {return}
-            
-            //let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-            //print(json)
             
             do {
                 let products = try JSONDecoder().decode(Products.self, from: data)
@@ -35,13 +30,9 @@ class MainViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-                //print(products.products.count)
             }catch{
                 print("unsucc")
             }
-            //let products = try? JSONDecoder().decode(Products.self, from: data)
-            
-            //print(products)
 
         }
         
@@ -139,8 +130,7 @@ class MainViewController: UITableViewController {
             controlla.product = products[(selectedIndexPath.row)]
             let cell = tableView.cellForRow(at: selectedIndexPath) as! ListCell
             controlla.holdImage = cell.picture.image
-            //controlla.holdText = cell.
-            //controlla.price = cell.price
+
         }
     }
     

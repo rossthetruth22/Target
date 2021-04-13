@@ -16,14 +16,11 @@ class DetailViewController: UIViewController {
     
     var product: Product!
     var holdImage: UIImage?
-    var holdText: String?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(textView.isHidden)
-        //textView.text = "Royce Reynolds"
-        //textView.text = "Royce Reynolds"
+
         textView.text = product.description
         price.text = product.regular_price.display_string
         picture.image = holdImage
