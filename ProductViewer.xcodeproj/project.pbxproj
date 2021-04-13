@@ -24,6 +24,7 @@
 		85809C8F261E437600E7B1AC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85809C8E261E437600E7B1AC /* Product.swift */; };
 		85809C92261EBC6300E7B1AC /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85809C91261EBC6300E7B1AC /* CircleView.swift */; };
 		85809C95261EDA3D00E7B1AC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85809C94261EDA3D00E7B1AC /* DetailViewController.swift */; };
+		85809C9B2626034500E7B1AC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85809C9A2626034500E7B1AC /* NetworkService.swift */; };
 		C5C0528B23886699002A586D /* Tempo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C0528723886616002A586D /* Tempo.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		85809C8E261E437600E7B1AC /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		85809C91261EBC6300E7B1AC /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		85809C94261EDA3D00E7B1AC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		85809C9A2626034500E7B1AC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C5C0528723886616002A586D /* Tempo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tempo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 				85809C7E261DF64A00E7B1AC /* Main.storyboard */,
 				85809C87261E400D00E7B1AC /* MainViewController.swift */,
 				85809C8A261E40DE00E7B1AC /* ListCell.swift */,
+				85809C9A2626034500E7B1AC /* NetworkService.swift */,
 				85809C8E261E437600E7B1AC /* Product.swift */,
 				85809C91261EBC6300E7B1AC /* CircleView.swift */,
 				85809C94261EDA3D00E7B1AC /* DetailViewController.swift */,
@@ -215,6 +218,7 @@
 				5BEF081F1D663598006BF0C0 /* ProductListView.swift in Sources */,
 				85809C8F261E437600E7B1AC /* Product.swift in Sources */,
 				5B302A8F1D663A8500FA2FFD /* ProductListComponent.swift in Sources */,
+				85809C9B2626034500E7B1AC /* NetworkService.swift in Sources */,
 				5BEF08141D663304006BF0C0 /* ListViewController.swift in Sources */,
 				85809C92261EBC6300E7B1AC /* CircleView.swift in Sources */,
 				5BEF08121D6632EC006BF0C0 /* ListCoordinator.swift in Sources */,

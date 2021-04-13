@@ -33,5 +33,11 @@ class ListCell: UITableViewCell {
         picture.image = nil
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        //let margins = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 30)
+        //contentView.frame = contentView.frame.inset(by: margins)
+    }
+    
 
 }

@@ -67,6 +67,9 @@ class MainViewController: UITableViewController {
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as? ListCell
+        cell?.layer.borderWidth = 0.5
+        cell?.layer.cornerRadius = 8
+        cell?.layer.borderColor = UIColor.lightGray.cgColor
         cell?.title.text = products[indexPath.row].title
         cell?.price.text = products[indexPath.row].regular_price.display_string
         DispatchQueue.global().async {
