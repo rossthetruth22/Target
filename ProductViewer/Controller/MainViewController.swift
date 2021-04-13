@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UITableViewController {
 
     var products = [Product]()
+    var images = [Int:UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,12 +64,19 @@ class MainViewController: UITableViewController {
         cell?.layer.borderColor = UIColor.lightGray.cgColor
         cell?.title.text = products[indexPath.row].title
         cell?.price.text = products[indexPath.row].regular_price.display_string
-        DispatchQueue.global().async {
-            guard let data = try? Data.init(contentsOf: self.products[indexPath.row].image_url) else {return}
-            DispatchQueue.main.async {
-                cell?.picture.image = UIImage(data: data)
+        
+        if let image = images[indexPath.row]{
+            cell?.picture.image = image
+        }else{
+            DispatchQueue.global().async {
+                guard let data = try? Data.init(contentsOf: self.products[indexPath.row].image_url) else {return}
+                DispatchQueue.main.async { [weak self] in
+                    cell?.picture.image = UIImage(data: data)
+                    self?.images[indexPath.row] = UIImage(data: data)
+                }
             }
         }
+        
         
 
         // Configure the cell...
